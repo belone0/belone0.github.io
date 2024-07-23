@@ -1,4 +1,4 @@
-name: cicd
+name: Pages
 on:
   push:
     branches:
@@ -8,9 +8,9 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@a81bbbf8298c0fa03ea29cdc473d45769f953675
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./
